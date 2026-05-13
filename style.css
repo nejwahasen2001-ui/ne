@@ -1,241 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-
 }
-body{
-    margin-top: 80px;
+body {
+    margin-top: 70px;
+    background: #0a0a2a;
+    transition: background 0.3s, color 0.3s;
 }
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:20px 100px;
-    background:rgb(134, 46, 139);
-    display: flex;
-    align-items: center;
-    z-index: 99;
-    backdrop-filter: blur(20px);
-}
-.logo{
-    font-size: 30px;
-    color: #fff;
-    text-decoration:none;
-    font-weight: 700;
-    margin-right: auto;
-}
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 40px;
-    font-weight: 500;
-
-}
-.user-auth{
-    margin-left:40px;
-
-}
-.user-auth .login-btn-modal{
-    height:40px;
-    padding:0 35px;
-    background:transparent;
-    border:2px solid #fff;
-    border-radius:40px;
-    color:#fff;
-    font-weight: 500;
-    cursor: pointer;
-    transition:.5s;
-} 
-.user-auth .register-btn-modal{
-    height:35px;
-    padding:0 35px;
-    background:transparent;
-    border:2px solid #fff;
-    border-radius:35px;
-    color:#fff;
-    font-weight: 500;
-    cursor: pointer;
-    transition:.5s;
-    margin-left: 10px;
-} 
-.user-auth .register-btn-modal:hover{
-    background:#fff;
-    color: rgb(139, 46, 120);
-}
-section{
-    min-height: 100vh;
-    background-image: url('background.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 0 100px;
-}
-section h1{
-    position:absolute;
-    bottom: 40px;
-    font-size: 25px;
-    color: #fff;
-    font-weight: 600;
-
-}
-.auth-modal{
+header {
     position: fixed;
-    inset: 0;
-    width: 420px;
-    height: 440px;
-    background:rgba(0,0,0,.3);
-    border:2px solid #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,.3);
-    color:#fff;
-    margin: auto;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-.auth-modal.register-active{
-    height: 520px;
-}
-.auth-modal .form-box{
+    top: 0;
+    left: 0;
     width: 100%;
-    padding:40px;
-    background: rgba(255,255,255,.08);
-    border-radius: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-}
-.auth-modal .form-box.login{
-    display: block;
-}
-.auth-modal .form-box.register{
-    display: none;
-}
-.auth-modal.register-active .form-box.login{
-    display: none;
-}
-.auth-modal.register-active .form-box.register{
-    display: block;
-}
-.auth-modal.active{
+    padding: 12px 5%;
+    background: rgba(25, 15, 55, 0.95);
+    backdrop-filter: blur(10px);
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1000;
 }
-.auth-modal .close{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 10;
+.brand {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f0e6ff;
+    text-decoration: none;
 }
-.auth-modal .close:hover{
-    color: #ccc;
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.form-box h2{
-    font-size: 35px;
-    text-align: center;
-}
-.input-box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-}
-.input-box input{
-    width: 100%;
-    height: 100%;
-    background:transparent;
-    border:2px solid rgba(255, 255, 255, .3);
-    border-radius: 40px;
-    padding:20px 45px 20px 20px;
-    color:#fff;
+.nav-links a {
+    color: #e0d6ff;
+    text-decoration: none;
+    font-weight: 500;
     font-size: 16px;
-    outline: none;
 }
-.input-box i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
+.user-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
-.btn{
-    width: 100%;
-    height: 45px;
-    background:#fff;
-    border:none;
+.user-buttons button, #darkModeToggle {
+    background: transparent;
+    border: 2px solid #a88eff;
     border-radius: 40px;
-    color:#222;
-    font-size: 16px;
+    color: #f0e6ff;
+    padding: 6px 18px;
     font-weight: 500;
     cursor: pointer;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
-.form-box p{
-    text-align: center;
-    margin-top: 20px;
     font-size: 14px;
 }
-.form-box a{
-    color: #fff;
-    text-decoration: none;
-}
-.form-box a:hover{
-    text-decoration: underline;
-}
-.profile-box .dropdown{
-    position: absolute;
-    top: 85%;
-    right: 100px;
-    padding: 10px;
-    background: #fff;
-    border:8px;
-    display:flex;
-    flex-direction: column;
-    
-}
-.profile-box .dropdown a{
-    color: #222;
-    padding: 6px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin: 2px 0;
-    transition: .2s;
-    font-weight: 500;
-}
-.profile-box .dropdown a:hover{
-    background: #f0f0f0;
-    border-radius: 4px;
-    color:#222;
-    text-decoration: none;
-    font-weight: 500;
-    margin: 2px 0;
-    transition:.2s;
-}
-.alert-box{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #fff;
-    color:#222;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-    display: none;
-}
-.alert{
+.hero {
+    min-height: 100vh;
+    background-image: url('galaxy.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 100px;
-    color:#222;
-    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+}
+.hero h1 {
+    font-size: clamp(32px, 8vw, 52px);
+    color: white;
+    text-shadow: 0 0 15px black;
+}
+.form-message {
+    background: rgba(0,0,0,0.6);
+    padding: 8px 16px;
+    border-radius: 30px;
+    color: #ccffcc;
+    margin-top: 15px;
+}
+section {
+    padding: 60px 5%;
+}
+.about-section, .projects-section, .contact-section {
+    background: rgba(10, 5, 30, 0.85);
+    backdrop-filter: blur(4px);
+    color: #f2eaff;
+}
+.about-section h2, .projects-section h2, .contact-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffdd99;
+}
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.project-card {
+    background: rgba(18, 14, 40, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #7a66cc;
+    transition: transform 0.2s;
+}
+.project-card h3 {
+    font-size: 1.4rem;
+    color: #ffdd99;
+    margin-bottom: 10px;
+}
+.project-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+.project-card small {
+    background: rgba(0,0,0,0.5);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(15, 10, 35, 0.7);
+    padding: 30px;
+    border-radius: 28px;
+}
+.input-box {
+    margin-bottom: 20px;
+}
+.input-box input, .input-box textarea {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #a88eff;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #7a5ac5;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+body.dark-mode {
+    background: #020010;
+}
+body.dark-mode .about-section,
+body.dark-mode .projects-section,
+body.dark-mode .contact-section {
+    background: rgba(0,0,0,0.8);
+}
+@media (max-width: 768px) {
+    body { margin-top: 110px; }
+    header { flex-direction: column; gap: 12px; text-align: center; }
+    .nav-links { justify-content: center; }
+    .hero h1 { font-size: 28px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .about-section h2, .projects-section h2, .contact-section h2 { font-size: 1.8rem; }
 }

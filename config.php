@@ -1,9 +1,9 @@
 <?php
 session_start();
-$host = 'localhost';
-$dbname = 'nejwa_portfolio';
-$user = 'root';
-$pass = '';  // Laragon default is empty
+$host = 'sql102.infinityfree.com';       
+$dbname = 'if0_41893575_nejwaportfolio'; 
+$user = 'if0_41893575';                   
+$pass = 'HnLPOkBskvuvA39'; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
