@@ -1,51 +1,25 @@
-<<<<<<< Updated upstream
-=======
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
->>>>>>> Stashed changes
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-<<<<<<< Updated upstream
 body {
     margin-top: 70px;
     background: #0a0a2a;
     transition: background 0.3s, color 0.3s;
 }
-=======
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin-top: 80px;
-    background: #0a0a2a;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* Header */
->>>>>>> Stashed changes
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-<<<<<<< Updated upstream
     padding: 12px 5%;
     background: rgba(25, 15, 55, 0.95);
-=======
-    padding: 15px 5%;
-    background: rgba(134, 46, 139, 0.95);
->>>>>>> Stashed changes
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< Updated upstream
     flex-wrap: wrap;
     z-index: 1000;
 }
@@ -166,16 +140,30 @@ section {
     border-radius: 28px;
 }
 .input-box {
+    position: relative;
     margin-bottom: 20px;
 }
 .input-box input, .input-box textarea {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 45px 12px 20px;
     background: rgba(255,255,255,0.1);
     border: 1px solid #a88eff;
     border-radius: 30px;
     color: white;
     font-size: 1rem;
+}
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #a88eff;
+    pointer-events: none;
+}
+.input-box textarea + i {
+    top: 25px;
+    transform: none;
 }
 .btn {
     width: 100%;
@@ -196,6 +184,111 @@ body.dark-mode .projects-section,
 body.dark-mode .contact-section {
     background: rgba(0,0,0,0.8);
 }
+body.dark-mode .input-box i {
+    color: #ccb6ff;
+}
+
+/* ===== MODAL STYLES – CENTERED, LARGER, ROUNDED ===== */
+.auth-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #1a1638;
+    padding: 40px 35px;
+    border-radius: 32px;          /* large border radius */
+    width: 90%;
+    max-width: 500px;             /* bigger form width */
+    position: relative;
+    border: 1px solid #a88eff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+    color: #ffdd99;
+    font-size: 28px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    border: 1px solid #a88eff;
+    border-radius: 60px;          /* pill-shaped inputs */
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #ffdd99;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content .btn {
+    width: 100%;
+    padding: 14px;
+    background: #7a5ac5;
+    border: none;
+    border-radius: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-content .btn:hover {
+    background: #9a7ae5;
+    transform: scale(1.01);
+}
+
+/* Close button (X) */
+.modal-content .close-login,
+.modal-content .close-register {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 32px;
+    color: #ccb6ff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-content .close-login:hover,
+.modal-content .close-register:hover {
+    color: #ffaa88;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 550px) {
+    .modal-content {
+        padding: 30px 20px;
+        max-width: 92%;
+    }
+    .modal-content h2 {
+        font-size: 24px;
+    }
+    .modal-content input {
+        padding: 12px 16px;
+    }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     body { margin-top: 110px; }
     header { flex-direction: column; gap: 12px; text-align: center; }
@@ -203,372 +296,4 @@ body.dark-mode .contact-section {
     .hero h1 { font-size: 28px; }
     .projects-grid { grid-template-columns: 1fr; }
     .about-section h2, .projects-section h2, .contact-section h2 { font-size: 1.8rem; }
-=======
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
-}
-
-.logo {
-    font-size: 26px;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffd966;
-}
-
-.user-auth {
-    display: flex;
-    gap: 12px;
-}
-
-.user-auth button, .dark-mode-btn {
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 40px;
-    color: white;
-    padding: 8px 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.user-auth button:hover, .dark-mode-btn:hover {
-    background: white;
-    color: rgb(134, 46, 139);
-}
-
-.dark-mode-btn {
-    margin-left: 10px;
-}
-
-/* Sections */
-section {
-    min-height: 100vh;
-    padding: 80px 5%;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero {
-    background-image: url('background.jpg');
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 48px;
-    color: white;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
-}
-
-.form-message {
-    background: rgba(0,0,0,0.7);
-    color: #aaffaa;
-    padding: 10px 20px;
-    border-radius: 30px;
-    display: inline-block;
-}
-
-/* About */
-.about-section {
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(5px);
-    text-align: center;
-    color: white;
-}
-
-.about-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.about-section p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* Projects */
-.projects-section {
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(4px);
-}
-
-.projects-section h2 {
-    text-align: center;
-    color: white;
-    font-size: 36px;
-    margin-bottom: 50px;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-
-.project-card h3 {
-    color: rgb(134, 46, 139);
-    margin-bottom: 12px;
-    font-size: 24px;
-}
-
-.project-card p {
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.project-card small {
-    display: inline-block;
-    background: #f0f0f0;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-}
-
-.project-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-
-.contact-section {
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-section h2 {
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    margin-bottom: 60px;
-}
-
-.contact-section form {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.1);
-    padding: 60px;
-    border-radius: 32px;
-    backdrop-filter: blur(10px);
-}
-
-.input-box {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.input-box input, .input-box textarea {
-    width: 100%;
-    padding: 15px 45px 15px 20px;
-    background: rgba(255,255,255,0.9);
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.input-box textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.input-box input:focus, .input-box textarea:focus {
-    background: white;
-    box-shadow: 0 0 0 3px rgba(134,46,139,0.3);
-}
-
-.input-box i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #666;
-}
-
-.input-box textarea + i {
-    top: 25px;
-    transform: none;
-}
-
-.btn {
-    width: 100%;
-    padding: 12px;
-    background: rgb(134, 46, 139);
-    border: none;
-    border-radius: 40px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: rgb(100, 30, 110);
-    transform: scale(1.02);
-}
-
-#contactResponse {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-/* Modal (unchanged but improved) */
-.auth-modal {
-    position: fixed;
-    inset: 0;
-    width: 420px;
-    height: 480px;
-    background: rgba(0,0,0,0.9);
-    border-radius: 32px;
-    margin: auto;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-}
-
-.auth-modal.active {
-    display: flex;
-}
-
-.auth-modal.register-active {
-    height: 560px;
-}
-
-.auth-modal .form-box {
-    width: 100%;
-    padding: 30px;
-    background: #1e1e2f;
-    border-radius: 24px;
-    color: white;
-}
-
-.auth-modal .form-box.login {
-    display: block;
-}
-
-.auth-modal .form-box.register {
-    display: none;
-}
-
-.auth-modal.register-active .form-box.login {
-    display: none;
-}
-
-.auth-modal.register-active .form-box.register {
-    display: block;
-}
-
-.auth-modal .close {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
-}
-
-.auth-modal .input-box input {
-    background: rgba(255,255,255,0.2);
-    color: white;
-}
-
-
-body.dark-mode {
-    background: #121212;
-}
-
-body.dark-mode .project-card {
-    background: #1e1e2f;
-    color: #ddd;
-}
-
-body.dark-mode .project-card h3 {
-    color: #ff8c8c;
-}
-
-body.dark-mode .project-card p {
-    color: #ccc;
-}
-
-body.dark-mode .input-box input,
-body.dark-mode .input-box textarea {
-    background: #2a2a3a;
-    color: white;
-}
-
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .user-auth {
-        margin-top: 5px;
-    }
-    .hero h1 {
-        font-size: 32px;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    .auth-modal {
-        width: 90%;
-    }
->>>>>>> Stashed changes
 }
